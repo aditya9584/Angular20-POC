@@ -1,0 +1,58 @@
+<div (scroll)="onWindowSizeChange()">
+<p>data-binding works!</p>
+<table style="width: 100%;"> 
+    <tr>
+        <td>
+            <span>{{courseName}}</span>             
+        </td>
+        <td>
+            <input type="text" value="{{rollNo}}">
+        </td>
+        <td>
+            {{currentDate}}
+        </td>
+    </tr>
+    <tr>
+        <!-- Property Binding -->
+        <td>
+            <input type="text" [value]="rollNo">
+        </td>
+        <td>
+            <input type="text" [minLength]="minTextLength">
+        </td>
+        <td>
+            <span [class]="spanClassName">Demo Text</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{rollNo}}
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="rollNo">
+        </td>
+        <td>
+            <input type="checkbox" [(ngModel)]="isActive">
+        </td>
+        <td>{{isActive}}</td>
+    </tr>
+</table>
+
+<br>
+<hr>
+
+<table style="background-color: aquamarine;" (mouseenter)="onMouseEnter()">Event Binding
+    <tr>
+        <td> 
+            <button (click)="showAlert()">Show Alert</button>
+        </td>
+        <td>
+            <select (change)="onCityChange()">
+                <option value="">Pune</option>
+                <option value="">Mumbai</option>
+                <option value="">Goa</option>
+            </select>
+        </td>
+    </tr>
+</table>
+</div>
